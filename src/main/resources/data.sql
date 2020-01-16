@@ -1,0 +1,1 @@
+INSERT INTO event (name, description, date) VALUES ('Feu d''artifice', 'Feu d''artifice du 14 juillet', '2019-07-14');
