@@ -19,6 +19,8 @@ public class Event {
 	private String description;
 	
 	private Date date;
+	
+	private String imagePath;
 
 	public Long getId() {
 		return id;
@@ -50,6 +52,14 @@ public class Event {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
 }
