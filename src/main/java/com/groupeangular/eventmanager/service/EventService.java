@@ -22,5 +22,9 @@ public class EventService {
 	public Optional<Event> find(Long id) {
 		return this.eventDAO.findById(id);
 	}
+
+	public List<Event> findAllLike(String pattern) {
+		return this.eventDAO.findAllByNameContainingIgnoreCase(pattern);
+	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.groupeangular.eventmanager.service.EventService;
 
 @RestController
 @RequestMapping("event")
+@CrossOrigin
 public class EventController {
 	
 	@Autowired
@@ -23,7 +25,7 @@ public class EventController {
 	
 	@GetMapping
 	public ResponseEntity<List<Event>> findAll() {
-		return ResponseEntity.ok(eventService.findAll());
+		return new ResponseEntity<>(eventService.findAll(), HttpStatus.OK);
 	}
 	
 	@GetMapping("{id}")
@@ -34,6 +36,11 @@ public class EventController {
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+	}
+	
+	@GetMapping("search/{pattern}")
+	public ResponseEntity<List<Event>> findLike(@PathVariable String pattern) {
+		return new ResponseEntity<>(eventService.findAllLike(pattern), HttpStatus.OK);
 	}
 
 }
