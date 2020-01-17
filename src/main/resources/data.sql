@@ -1,2 +1,2 @@
 INSERT INTO event (name, description, date, image_path) VALUES ('Feu d''artifice', 'Feu d''artifice du 14 juillet', '2019-07-14T23:00:00', 'https://placeimg.com/640/360/any');
-INSERT INTO event (name, description, date, image_path) VALUES ('Super soirée delux', 'Au 14 boulevard de la liberté', '2019-07-10T22:00:00', 'https://placeimg.com/640/480/arch');
+INSERT INTO event (name, description, date, image_path) VALUES ('Super soirée delux', 'Au 14 boulevard de la liberté', '2019-07-10T22:00:00', 'https://placeimg.com/640/360/arch');
