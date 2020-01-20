@@ -26,5 +26,11 @@ public class EventService {
 	public List<Event> findAllLike(String pattern) {
 		return this.eventDAO.findAllByNameContainingIgnoreCase(pattern);
 	}
+
+	public Optional<Event> create(Event event) {
+		event.setName(String.format("%s Delux", event.getName()));
+		
+		return Optional.of(this.eventDAO.save(event));
+	}
 	
 }
