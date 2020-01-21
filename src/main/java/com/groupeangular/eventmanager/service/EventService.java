@@ -32,5 +32,9 @@ public class EventService {
 		
 		return Optional.of(this.eventDAO.save(event));
 	}
+
+	public void delete(Long id) {
+		this.eventDAO.deleteById(id);
+	}
 	
 }
